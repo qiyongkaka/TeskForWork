@@ -66,7 +66,7 @@ class ConcreteDecoratorB: Decorator {
 /// The client code works with all objects using the Component interface. This
 /// way it can stay independent of the concrete classes of components it works
 /// with.
-class Client {
+fileprivate class Client {
     // ...
     static func someClientCode(component: Component) {
         print("Result: " + component.operation())
@@ -77,15 +77,15 @@ class Client {
 /// Let's see how it all works together.
 
 func testForDecorator() {
-        // This way the client code can support both simple components...
+    // This way the client code can support both simple components...
     print("Client: I've got a simple component")
     let simple = ConcreteComponent()
     Client.someClientCode(component: simple)
 
-        // ...as well as decorated ones.
-        //
-        // Note how decorators can wrap not only simple components but the other
-        // decorators as well.
+    // ...as well as decorated ones.
+    //
+    // Note how decorators can wrap not only simple components but the other
+    // decorators as well.
     let decorator1 = ConcreteDecoratorA(simple)
     let decorator2 = ConcreteDecoratorB(decorator1)
     print("\nClient: Now I've got a decorated component")

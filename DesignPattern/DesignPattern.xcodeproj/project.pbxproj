@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B5AD36F2A7544A500847832 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AD36E2A7544A500847832 /* Delegate.swift */; };
+		2B5AD3722A754B8800847832 /* GeneMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AD3712A754B8800847832 /* GeneMethod.swift */; };
+		2B5AD3752A7550B600847832 /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AD3742A7550B600847832 /* Iterator.swift */; };
+		2B5AD3782A75577800847832 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AD3772A75577800847832 /* State.swift */; };
 		2BDBFB3A2A6D136C0020CE37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBFB392A6D136C0020CE37 /* main.swift */; };
 		2BDBFB422A6D13AA0020CE37 /* decorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBFB412A6D13AA0020CE37 /* decorator.swift */; };
 		2BDBFB472A6D1CC20020CE37 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBFB462A6D1CC20020CE37 /* Strategy.swift */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		2B5AD36E2A7544A500847832 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		2B5AD3712A754B8800847832 /* GeneMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneMethod.swift; sourceTree = "<group>"; };
+		2B5AD3742A7550B600847832 /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
+		2B5AD3772A75577800847832 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2BDBFB362A6D136C0020CE37 /* DesignPattern */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesignPattern; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDBFB392A6D136C0020CE37 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2BDBFB412A6D13AA0020CE37 /* decorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decorator.swift; sourceTree = "<group>"; };
@@ -62,6 +68,30 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		2B5AD3702A754B6600847832 /* GeneMethod */ = {
+			isa = PBXGroup;
+			children = (
+				2B5AD3712A754B8800847832 /* GeneMethod.swift */,
+			);
+			path = GeneMethod;
+			sourceTree = "<group>";
+		};
+		2B5AD3732A75509E00847832 /* Iterator */ = {
+			isa = PBXGroup;
+			children = (
+				2B5AD3742A7550B600847832 /* Iterator.swift */,
+			);
+			path = Iterator;
+			sourceTree = "<group>";
+		};
+		2B5AD3762A75576200847832 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				2B5AD3772A75577800847832 /* State.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		2BDBFB2D2A6D136C0020CE37 = {
 			isa = PBXGroup;
 			children = (
@@ -82,14 +112,17 @@
 		2BDBFB382A6D136C0020CE37 /* DesignPattern */ = {
 			isa = PBXGroup;
 			children = (
+				2B5AD3762A75576200847832 /* State */,
+				2B5AD3732A75509E00847832 /* Iterator */,
 				2B5AD36D2A75448A00847832 /* Delegate */,
+				2B5AD3702A754B6600847832 /* GeneMethod */,
 				2BF629D02A6ED66100662FA4 /* Adapter */,
 				2BDBFB512A6D55BF0020CE37 /* Command */,
 				2BDBFB4E2A6D48E00020CE37 /* Singleton */,
 				2BDBFB4D2A6D2F5B0020CE37 /* factory */,
-				2BDBFB452A6D1C4F0020CE37 /* Strategy */,
-				2BDBFB482A6D1F6B0020CE37 /* Observer */,
 				2BDBFB402A6D13830020CE37 /* Decorator */,
+				2BDBFB482A6D1F6B0020CE37 /* Observer */,
+				2BDBFB452A6D1C4F0020CE37 /* Strategy */,
 			);
 			path = DesignPattern;
 			sourceTree = "<group>";
@@ -211,12 +244,15 @@
 				2BDBFB4C2A6D2F530020CE37 /* factory.swift in Sources */,
 				2BF629D22A6ED66F00662FA4 /* Adapter.swift in Sources */,
 				2BDBFB502A6D49010020CE37 /* Singleton.swift in Sources */,
+				2B5AD3722A754B8800847832 /* GeneMethod.swift in Sources */,
 				2B5AD36F2A7544A500847832 /* Delegate.swift in Sources */,
 				2BDBFB422A6D13AA0020CE37 /* decorator.swift in Sources */,
+				2B5AD3752A7550B600847832 /* Iterator.swift in Sources */,
 				2BDBFB3A2A6D136C0020CE37 /* main.swift in Sources */,
 				2BDBFB532A6D55D30020CE37 /* Command.swift in Sources */,
 				2BDBFB472A6D1CC20020CE37 /* Strategy.swift in Sources */,
 				2BDBFB4A2A6D1F830020CE37 /* obersever.swift in Sources */,
+				2B5AD3782A75577800847832 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

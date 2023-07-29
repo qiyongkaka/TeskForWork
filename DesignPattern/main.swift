@@ -31,9 +31,17 @@ func main() {
     
 //    // 适配器模式
 //    testForAdapter()
+
+//    // 代理模式
+//    testForDelegate()
+//
+//    // 模版方法模式
+//    testForGeneMethod()
     
-    // 代理模式
-    testForDelegate()
+//    // 迭代器和组合模式
+//    testForIterator()
     
+    // 状态模式
+    testForState()
 }
 
