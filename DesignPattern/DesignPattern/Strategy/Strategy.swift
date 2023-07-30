@@ -2,118 +2,66 @@
 //  Strategy.swift
 //  DesignPattern
 //
-//  Created by ByteDance on 2023/7/23.
+//  Created by qiyongka on 2023/7/23.
 //
 
 import Foundation
 
-protocol Flyable {
-    func fly()
-}
+fileprivate class Context {
 
-class FlyWithWings:Flyable {
-    func fly() {
-        print("我是会飞的鸭子，我用翅膀飞呀飞")
-    }
-}
+    /// The Context maintains a reference to one of the Strategy objects. The
+    /// Context does not know the concrete class of a strategy. It should work
+    /// with all strategies via the Strategy interface.
+    private var strategy: Strategy
 
-//什么都不会飞
-class FlyNoWay:Flyable{
-    func fly() {
-        print("我是不会飞的鸭子")
+    /// Usually, the Context accepts a strategy through the constructor, but
+    /// also provides a setter to change it at runtime.
+    init(strategy: Strategy) {
+        self.strategy = strategy
     }
-}
 
+    /// Usually, the Context allows replacing a Strategy object at runtime.
+    func update(strategy: Strategy) {
+        self.strategy = strategy
+    }
 
-class Duck{
-    //添加行为委托代理者
-    var flyBehavior : Flyable! = nil
-    
-    func setFlyBehavior(_ flyBehavior : Flyable){
-        self.flyBehavior = flyBehavior
-    }
-    func swim(){
-        print("鸭子游泳喽～")
-    }
-    
-    func quack(){
-        print("鸭子呱呱叫")
-    }
-    
-    func display(){
-    }
-    
-    //执行飞的行为
-    func performFly(){
-        guard self.flyBehavior != nil else {
-            return
-        }
-        self.flyBehavior.fly()
+    /// The Context delegates some work to the Strategy object instead of
+    /// implementing multiple versions of the algorithm on its own.
+    func doSomeBusinessLogic() {
+        print("Context: Sorting data using the strategy (not sure how it'll do it)\n")
+
+        let result = strategy.doAlgorithm(["a", "b", "c", "d", "e"])
+        print(result.joined(separator: ", "))
     }
 }
 
+fileprivate protocol Strategy {
 
-class MallarDuck : Duck{
-    override init() {
-        super.init()
-        self.setFlyBehavior(FlyWithWings())
-    }
-    override func display() {
-        print("我是绿头鸭子")
+    func doAlgorithm<T: Comparable>(_ data: [T]) -> [T]
+}
+
+/// Concrete Strategies implement the algorithm while following the base
+/// Strategy interface. The interface makes them interchangeable in the Context.
+fileprivate class ConcreteStrategyA: Strategy {
+
+    func doAlgorithm<T: Comparable>(_ data: [T]) -> [T] {
+        return data.sorted()
     }
 }
 
-class RedHeadDuck:Duck{
-    override init() {
-        super.init()
-        self.setFlyBehavior(FlyWithWings())
-    }
-    override func display() {
-        print("我是红头鸭子")
-    }
-}
+fileprivate class ConcreteStrategyB: Strategy {
 
-class RubberDuck:Duck{
-    override init() {
-        super.init()
-        self.setFlyBehavior(FlyNoWay())
-    }
-    override func display() {
-        print("橡皮鸭")
-    }
-}
-
-class ModelDuck : Duck {
-    override init() {
-        super.init()
-        self.setFlyBehavior(FlyWithWings())
-    }
-    override func display() {
-        print("鸭子模型")
-    }
-}
-
-class FlyAutomaticPower : Flyable {
-    func fly() {
-        print("我是用发动机飞的鸭子")
+    func doAlgorithm<T: Comparable>(_ data: [T]) -> [T] {
+        return data.sorted(by: >)
     }
 }
 
 func testForStrategy() {
-    //    print("鸭子：使用延展")
-    //    let mallarDuck : MallarDuck = MallarDuck()
-    //    mallarDuck.fly()
-        
-    print("鸭子：使用接口")
-    var duck : Duck = MallarDuck()
-    duck.performFly()
-    duck.setFlyBehavior(FlyNoWay())
-    duck.performFly()
-    print("-----创建一个模型鸭子，且会飞")
-    duck = ModelDuck()
-    duck.performFly()
-    print("-----给模型鸭子装发动机，支持飞")
-    duck.setFlyBehavior(FlyAutomaticPower())
-    duck.performFly()
-    print("\n")
+    let context = Context(strategy: ConcreteStrategyA())
+    print("Client: Strategy is set to normal sorting.\n")
+    context.doSomeBusinessLogic()
+
+    print("\nClient: Strategy is set to reverse sorting.\n")
+    context.update(strategy: ConcreteStrategyB())
+    context.doSomeBusinessLogic()
 }

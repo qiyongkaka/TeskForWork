@@ -10,7 +10,7 @@ import Foundation
 fileprivate class Context {
 
     /// A reference to the current state of the Context.
-    private var state: State
+    var state: State
 
     init(_ state: State) {
         self.state = state
@@ -81,7 +81,10 @@ fileprivate class ConcreteStateB: BaseState {
 }
 
 func testForState() {
-    let context = Context(ConcreteStateA())
+    var temp: State = ConcreteStateA()
+    let context = Context(temp)
     context.request1()
-    context.request2()
+    print(context.state)
+    temp = ConcreteStateB()
+    print(temp)
 }

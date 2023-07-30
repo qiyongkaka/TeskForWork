@@ -2,7 +2,7 @@
 //  TestMain.swift
 //  DesignPattern
 //
-//  Created by ByteDance on 2023/7/23.
+//  Created by qiyongka on 2023/7/23.
 //
 
 import Foundation
