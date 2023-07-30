@@ -10,7 +10,7 @@ import Foundation
 class Singleton {
 
     static let shared = Singleton()
-    var name: String = "test for Bytedance"
+    var name: String = "test for qiyongka"
     private init() {
         // 不要忘记把构造器变成私有
     }
