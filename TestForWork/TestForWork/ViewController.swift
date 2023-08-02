@@ -33,8 +33,39 @@ class ViewController: UIViewController {
         presentAnimation.presentController = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("viewWillLayoutSubviews")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("viewDidLayoutSubviews")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("viewWillDisappear")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("viewDidDisappear")
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        print("viewWillTransition")
+        /*
         self.updateLayout(size: size)
         coordinator.animate(alongsideTransition: { (context) in
                 // 在旋转期间执行动画
@@ -46,7 +77,6 @@ class ViewController: UIViewController {
                 let screenHeight = size.height
                 let cardWidth = size.width * 0.4
                 self.updateLayout(size: size)
-                print(context.containerView)
                 
                 self.button2.snp.remakeConstraints { make in
                     make.left.equalToSuperview().offset(size.width * 0.55)
@@ -55,13 +85,10 @@ class ViewController: UIViewController {
                     make.height.equalTo(300)
                 }
                 
-                // 使用View的frame的变化可以做到 transition 的大小的控制，但是存在风险，上层的view不一定是transition
-//                self.main.view.superview?.frame = CGRect(x: screenWidth - cardWidth, y: 0, width: cardWidth, height: screenHeight)
-//
-                
                 self.presentAnimation.containerView?.frame = CGRect(x: screenWidth - cardWidth, y: 0, width: cardWidth, height: screenHeight)
 
             }
+         */
     }
 
     func updateLayout(size: CGSize) {
@@ -71,14 +98,12 @@ class ViewController: UIViewController {
                 make.height.equalTo(size.height)
                 make.right.equalToSuperview()
             }
-
     }
 
     @objc func buttonClick() {
         main.modalPresentationStyle = .overCurrentContext
         main.transitioningDelegate = self
         self.present(main, animated: true)
-        button1.isEnabled = false
     }
     
     @objc func buttonClick2() {

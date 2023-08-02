@@ -2,22 +2,26 @@ PODS:
   - LookinServer (1.1.7):
     - LookinServer/Core (= 1.1.7)
   - LookinServer/Core (1.1.7)
+  - RxSwift (6.5.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - LookinServer
+  - RxSwift (= 6.5.0)
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - LookinServer
+    - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
   LookinServer: 4ce0469b066871525611d009d8d16a7a50c23491
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 747af941bced28f0b032448a1e121b40624e4d07
+PODFILE CHECKSUM: 2c54b390b2b5b9f7e6d4c12c702be6946fd38261
 
 COCOAPODS: 1.12.1
 
@@ -25,4 +29,5 @@ SPECS TARGET:
   TestForWork:
     - LookinServer
     - LookinServer/Core
+    - RxSwift
     - SnapKit

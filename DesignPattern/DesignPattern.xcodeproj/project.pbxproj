@@ -19,6 +19,7 @@
 		2BDBFB502A6D49010020CE37 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBFB4F2A6D49010020CE37 /* Singleton.swift */; };
 		2BDBFB532A6D55D30020CE37 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBFB522A6D55D30020CE37 /* Command.swift */; };
 		2BF629D22A6ED66F00662FA4 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF629D12A6ED66F00662FA4 /* Adapter.swift */; };
+		AE9AB12BBBDAF3A9D651B679 /* Pods_DesignPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72640F8C73A901720133319 /* Pods_DesignPattern.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,9 @@
 		2BDBFB4F2A6D49010020CE37 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		2BDBFB522A6D55D30020CE37 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		2BF629D12A6ED66F00662FA4 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
+		402009CE0CBAABDD35D8CCE9 /* Pods-DesignPattern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignPattern.debug.xcconfig"; path = "Target Support Files/Pods-DesignPattern/Pods-DesignPattern.debug.xcconfig"; sourceTree = "<group>"; };
+		B72640F8C73A901720133319 /* Pods_DesignPattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignPattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F324A34FF5F90F81A9591362 /* Pods-DesignPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignPattern.release.xcconfig"; path = "Target Support Files/Pods-DesignPattern/Pods-DesignPattern.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9AB12BBBDAF3A9D651B679 /* Pods_DesignPattern.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26759F25D3A0E5A9EB5E85FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				402009CE0CBAABDD35D8CCE9 /* Pods-DesignPattern.debug.xcconfig */,
+				F324A34FF5F90F81A9591362 /* Pods-DesignPattern.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2B5AD36D2A75448A00847832 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +112,8 @@
 				2BDBFB382A6D136C0020CE37 /* DesignPattern */,
 				2BDBFB392A6D136C0020CE37 /* main.swift */,
 				2BDBFB372A6D136C0020CE37 /* Products */,
+				26759F25D3A0E5A9EB5E85FA /* Pods */,
+				EBA97C9370395FB4A44BFAC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +199,14 @@
 			path = Adapter;
 			sourceTree = "<group>";
 		};
+		EBA97C9370395FB4A44BFAC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B72640F8C73A901720133319 /* Pods_DesignPattern.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BDBFB3D2A6D136C0020CE37 /* Build configuration list for PBXNativeTarget "DesignPattern" */;
 			buildPhases = (
+				A97B603A82D368B493E484C6 /* [CP] Check Pods Manifest.lock */,
+				94CE2937A6A53D5F35292FDB /* [CP-User] Hummer-before-hooks */,
 				2BDBFB322A6D136C0020CE37 /* Sources */,
 				2BDBFB332A6D136C0020CE37 /* Frameworks */,
 				2BDBFB342A6D136C0020CE37 /* CopyFiles */,
+				3A0D1B0E81A6B92B071A617E /* [CP-User] Hummer-after-hooks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +262,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A0D1B0E81A6B92B071A617E /* [CP-User] Hummer-after-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-after-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_after_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_after_hooks.sh\"\nfi\n";
+		};
+		94CE2937A6A53D5F35292FDB /* [CP-User] Hummer-before-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-before-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_before_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_before_hooks.sh\"\nfi\n";
+		};
+		A97B603A82D368B493E484C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesignPattern-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BDBFB322A6D136C0020CE37 /* Sources */ = {
@@ -374,6 +446,7 @@
 		};
 		2BDBFB3E2A6D136C0020CE37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 402009CE0CBAABDD35D8CCE9 /* Pods-DesignPattern.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H49DBB47YQ;
@@ -385,6 +458,7 @@
 		};
 		2BDBFB3F2A6D136C0020CE37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F324A34FF5F90F81A9591362 /* Pods-DesignPattern.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H49DBB47YQ;
