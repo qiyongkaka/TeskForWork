@@ -18,12 +18,9 @@ class mainController: UIViewController {
     
     override func viewDidLoad() {
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        let swipeAreaRect = CGRect(x: 0, y: 0, width: 20, height: UIScreen.main.bounds.height)
-        let swipeAreaView = UIView(frame: swipeAreaRect)
-        self.view.addSubview(swipeAreaView)
 
         // 将手势识别器添加到滑动区域视图上
-        swipeAreaView.addGestureRecognizer(swipeGestureRecognizer)
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
     
     required init?(coder: NSCoder) {

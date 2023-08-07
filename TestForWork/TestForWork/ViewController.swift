@@ -36,30 +36,6 @@ class ViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         print("viewWillTransition")
-        /*
-        self.updateLayout(size: size)
-        coordinator.animate(alongsideTransition: { (context) in
-                // 在旋转期间执行动画
-                self.view.alpha = 0.0
-            }) { (context) in
-                // 在旋转结束后执行其他操作
-                self.view.alpha = 1.0
-                let screenWidth = size.width
-                let screenHeight = size.height
-                let cardWidth = size.width * 0.4
-                self.updateLayout(size: size)
-                
-                self.button2.snp.remakeConstraints { make in
-                    make.left.equalToSuperview().offset(size.width * 0.55)
-                    make.bottom.equalToSuperview()
-                    make.width.equalTo(300)
-                    make.height.equalTo(300)
-                }
-                
-                self.presentAnimation.containerView?.frame = CGRect(x: screenWidth - cardWidth, y: 0, width: cardWidth, height: screenHeight)
-
-            }
-         */
     }
 
     func updateLayout(size: CGSize) {
