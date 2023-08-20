@@ -31,6 +31,14 @@ class ViewController: UIViewController {
         }
         
         presentAnimation.presentController = self
+        // 使用示例
+        let viewToObserve = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        main.view = viewToObserve
+        let observer = FrameObserver(view: viewToObserve)
+
+        // 修改view的frame，触发监听
+        viewToObserve.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -67,6 +75,11 @@ extension ViewController: UIViewControllerTransitioningDelegate {
         return nil
     }
     
+}
+extension UIViewController: UINavigationControllerDelegate {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
 }
 
 

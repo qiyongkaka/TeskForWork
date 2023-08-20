@@ -1,0 +1,828 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22338A2F0C28755590FAFFAC /* Pods_DarkEffectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A8EB74EF8A6FEA64E066C1 /* Pods_DarkEffectTests.framework */; };
+		2B74762D2A8F4E410029F458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74762C2A8F4E410029F458 /* AppDelegate.swift */; };
+		2B74762F2A8F4E410029F458 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74762E2A8F4E410029F458 /* SceneDelegate.swift */; };
+		2B7476312A8F4E410029F458 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7476302A8F4E410029F458 /* ViewController.swift */; };
+		2B7476342A8F4E410029F458 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7476322A8F4E410029F458 /* Main.storyboard */; };
+		2B7476362A8F4E430029F458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7476352A8F4E430029F458 /* Assets.xcassets */; };
+		2B7476392A8F4E430029F458 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7476372A8F4E430029F458 /* LaunchScreen.storyboard */; };
+		2B7476442A8F4E430029F458 /* DarkEffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7476432A8F4E430029F458 /* DarkEffectTests.swift */; };
+		2B74764E2A8F4E430029F458 /* DarkEffectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74764D2A8F4E430029F458 /* DarkEffectUITests.swift */; };
+		2B7476502A8F4E430029F458 /* DarkEffectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74764F2A8F4E430029F458 /* DarkEffectUITestsLaunchTests.swift */; };
+		96D533B59ADAA150494495C5 /* Pods_DarkEffect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5FB38B8E5DAC7D631E0B43 /* Pods_DarkEffect.framework */; };
+		C0ED776B63A597DD7CC9FE63 /* Pods_DarkEffect_DarkEffectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E8E4F56E4638EBBD5E73FE /* Pods_DarkEffect_DarkEffectUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B7476402A8F4E430029F458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B7476212A8F4E400029F458 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B7476282A8F4E410029F458;
+			remoteInfo = DarkEffect;
+		};
+		2B74764A2A8F4E430029F458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B7476212A8F4E400029F458 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B7476282A8F4E410029F458;
+			remoteInfo = DarkEffect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04A8EB74EF8A6FEA64E066C1 /* Pods_DarkEffectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DarkEffectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7476292A8F4E410029F458 /* DarkEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B74762C2A8F4E410029F458 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B74762E2A8F4E410029F458 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2B7476302A8F4E410029F458 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B7476332A8F4E410029F458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B7476352A8F4E430029F458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B7476382A8F4E430029F458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2B74763A2A8F4E430029F458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B74763F2A8F4E430029F458 /* DarkEffectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkEffectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7476432A8F4E430029F458 /* DarkEffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkEffectTests.swift; sourceTree = "<group>"; };
+		2B7476492A8F4E430029F458 /* DarkEffectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkEffectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B74764D2A8F4E430029F458 /* DarkEffectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkEffectUITests.swift; sourceTree = "<group>"; };
+		2B74764F2A8F4E430029F458 /* DarkEffectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkEffectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5E5FB38B8E5DAC7D631E0B43 /* Pods_DarkEffect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DarkEffect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6539BF76670754CA8EC8FF71 /* Pods-DarkEffect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DarkEffect.release.xcconfig"; path = "Target Support Files/Pods-DarkEffect/Pods-DarkEffect.release.xcconfig"; sourceTree = "<group>"; };
+		8FF6966FCAB8B4F63CB1CB35 /* Pods-DarkEffect-DarkEffectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DarkEffect-DarkEffectUITests.release.xcconfig"; path = "Target Support Files/Pods-DarkEffect-DarkEffectUITests/Pods-DarkEffect-DarkEffectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9358986AB822589874161D63 /* Pods-DarkEffectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DarkEffectTests.debug.xcconfig"; path = "Target Support Files/Pods-DarkEffectTests/Pods-DarkEffectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5E8E4F56E4638EBBD5E73FE /* Pods_DarkEffect_DarkEffectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DarkEffect_DarkEffectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A84EB8189B1668D5A06BF767 /* Pods-DarkEffect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DarkEffect.debug.xcconfig"; path = "Target Support Files/Pods-DarkEffect/Pods-DarkEffect.debug.xcconfig"; sourceTree = "<group>"; };
+		CFFC46547C12E31C6BCC7C78 /* Pods-DarkEffectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DarkEffectTests.release.xcconfig"; path = "Target Support Files/Pods-DarkEffectTests/Pods-DarkEffectTests.release.xcconfig"; sourceTree = "<group>"; };
+		D583525F8B202BF6D81FDAC7 /* Pods-DarkEffect-DarkEffectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DarkEffect-DarkEffectUITests.debug.xcconfig"; path = "Target Support Files/Pods-DarkEffect-DarkEffectUITests/Pods-DarkEffect-DarkEffectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B7476262A8F4E410029F458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96D533B59ADAA150494495C5 /* Pods_DarkEffect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B74763C2A8F4E430029F458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22338A2F0C28755590FAFFAC /* Pods_DarkEffectTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B7476462A8F4E430029F458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0ED776B63A597DD7CC9FE63 /* Pods_DarkEffect_DarkEffectUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B7476202A8F4E400029F458 = {
+			isa = PBXGroup;
+			children = (
+				2B74762B2A8F4E410029F458 /* DarkEffect */,
+				2B7476422A8F4E430029F458 /* DarkEffectTests */,
+				2B74764C2A8F4E430029F458 /* DarkEffectUITests */,
+				2B74762A2A8F4E410029F458 /* Products */,
+				D351080E31EF069239A51484 /* Pods */,
+				37D312E866E398B8FE39F3E2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2B74762A2A8F4E410029F458 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B7476292A8F4E410029F458 /* DarkEffect.app */,
+				2B74763F2A8F4E430029F458 /* DarkEffectTests.xctest */,
+				2B7476492A8F4E430029F458 /* DarkEffectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B74762B2A8F4E410029F458 /* DarkEffect */ = {
+			isa = PBXGroup;
+			children = (
+				2B74762C2A8F4E410029F458 /* AppDelegate.swift */,
+				2B74762E2A8F4E410029F458 /* SceneDelegate.swift */,
+				2B7476302A8F4E410029F458 /* ViewController.swift */,
+				2B7476322A8F4E410029F458 /* Main.storyboard */,
+				2B7476352A8F4E430029F458 /* Assets.xcassets */,
+				2B7476372A8F4E430029F458 /* LaunchScreen.storyboard */,
+				2B74763A2A8F4E430029F458 /* Info.plist */,
+			);
+			path = DarkEffect;
+			sourceTree = "<group>";
+		};
+		2B7476422A8F4E430029F458 /* DarkEffectTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B7476432A8F4E430029F458 /* DarkEffectTests.swift */,
+			);
+			path = DarkEffectTests;
+			sourceTree = "<group>";
+		};
+		2B74764C2A8F4E430029F458 /* DarkEffectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2B74764D2A8F4E430029F458 /* DarkEffectUITests.swift */,
+				2B74764F2A8F4E430029F458 /* DarkEffectUITestsLaunchTests.swift */,
+			);
+			path = DarkEffectUITests;
+			sourceTree = "<group>";
+		};
+		37D312E866E398B8FE39F3E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E5FB38B8E5DAC7D631E0B43 /* Pods_DarkEffect.framework */,
+				A5E8E4F56E4638EBBD5E73FE /* Pods_DarkEffect_DarkEffectUITests.framework */,
+				04A8EB74EF8A6FEA64E066C1 /* Pods_DarkEffectTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D351080E31EF069239A51484 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A84EB8189B1668D5A06BF767 /* Pods-DarkEffect.debug.xcconfig */,
+				6539BF76670754CA8EC8FF71 /* Pods-DarkEffect.release.xcconfig */,
+				D583525F8B202BF6D81FDAC7 /* Pods-DarkEffect-DarkEffectUITests.debug.xcconfig */,
+				8FF6966FCAB8B4F63CB1CB35 /* Pods-DarkEffect-DarkEffectUITests.release.xcconfig */,
+				9358986AB822589874161D63 /* Pods-DarkEffectTests.debug.xcconfig */,
+				CFFC46547C12E31C6BCC7C78 /* Pods-DarkEffectTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B7476282A8F4E410029F458 /* DarkEffect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B7476532A8F4E430029F458 /* Build configuration list for PBXNativeTarget "DarkEffect" */;
+			buildPhases = (
+				D28BA10277172B47049091BE /* [CP] Check Pods Manifest.lock */,
+				5AA046B1F225715F4C622B8D /* [CP-User] Hummer-before-hooks */,
+				2B7476252A8F4E410029F458 /* Sources */,
+				2B7476262A8F4E410029F458 /* Frameworks */,
+				2B7476272A8F4E410029F458 /* Resources */,
+				2FF8F2773F28358B56FB1AB4 /* [CP-User] Hummer-after-hooks */,
+				8FBFE338E53AAB552F0A69CD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DarkEffect;
+			productName = DarkEffect;
+			productReference = 2B7476292A8F4E410029F458 /* DarkEffect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B74763E2A8F4E430029F458 /* DarkEffectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B7476562A8F4E430029F458 /* Build configuration list for PBXNativeTarget "DarkEffectTests" */;
+			buildPhases = (
+				1AA395DCFEBE24186A401052 /* [CP] Check Pods Manifest.lock */,
+				E3BCF736EA9C3FCC3A39D792 /* [CP-User] Hummer-before-hooks */,
+				2B74763B2A8F4E430029F458 /* Sources */,
+				2B74763C2A8F4E430029F458 /* Frameworks */,
+				2B74763D2A8F4E430029F458 /* Resources */,
+				CDCD9FA4295E3E6902AD59E6 /* [CP-User] Hummer-after-hooks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B7476412A8F4E430029F458 /* PBXTargetDependency */,
+			);
+			name = DarkEffectTests;
+			productName = DarkEffectTests;
+			productReference = 2B74763F2A8F4E430029F458 /* DarkEffectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2B7476482A8F4E430029F458 /* DarkEffectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B7476592A8F4E430029F458 /* Build configuration list for PBXNativeTarget "DarkEffectUITests" */;
+			buildPhases = (
+				780D999EA956FCBB8872D2F8 /* [CP] Check Pods Manifest.lock */,
+				BF19891BE5C010C6DD6D9AFE /* [CP-User] Hummer-before-hooks */,
+				2B7476452A8F4E430029F458 /* Sources */,
+				2B7476462A8F4E430029F458 /* Frameworks */,
+				2B7476472A8F4E430029F458 /* Resources */,
+				3FB9A8B74CB0B3DCABC9C279 /* [CP-User] Hummer-after-hooks */,
+				A59B02F08A0FEB7149A61CDF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B74764B2A8F4E430029F458 /* PBXTargetDependency */,
+			);
+			name = DarkEffectUITests;
+			productName = DarkEffectUITests;
+			productReference = 2B7476492A8F4E430029F458 /* DarkEffectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B7476212A8F4E400029F458 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2B7476282A8F4E410029F458 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					2B74763E2A8F4E430029F458 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 2B7476282A8F4E410029F458;
+					};
+					2B7476482A8F4E430029F458 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 2B7476282A8F4E410029F458;
+					};
+				};
+			};
+			buildConfigurationList = 2B7476242A8F4E400029F458 /* Build configuration list for PBXProject "DarkEffect" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B7476202A8F4E400029F458;
+			productRefGroup = 2B74762A2A8F4E410029F458 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B7476282A8F4E410029F458 /* DarkEffect */,
+				2B74763E2A8F4E430029F458 /* DarkEffectTests */,
+				2B7476482A8F4E430029F458 /* DarkEffectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B7476272A8F4E410029F458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B7476392A8F4E430029F458 /* LaunchScreen.storyboard in Resources */,
+				2B7476362A8F4E430029F458 /* Assets.xcassets in Resources */,
+				2B7476342A8F4E410029F458 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B74763D2A8F4E430029F458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B7476472A8F4E430029F458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AA395DCFEBE24186A401052 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DarkEffectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FF8F2773F28358B56FB1AB4 /* [CP-User] Hummer-after-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-after-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_after_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_after_hooks.sh\"\nfi\n";
+		};
+		3FB9A8B74CB0B3DCABC9C279 /* [CP-User] Hummer-after-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-after-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_after_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_after_hooks.sh\"\nfi\n";
+		};
+		5AA046B1F225715F4C622B8D /* [CP-User] Hummer-before-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-before-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_before_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_before_hooks.sh\"\nfi\n";
+		};
+		780D999EA956FCBB8872D2F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DarkEffect-DarkEffectUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FBFE338E53AAB552F0A69CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DarkEffect/Pods-DarkEffect-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DarkEffect/Pods-DarkEffect-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DarkEffect/Pods-DarkEffect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A59B02F08A0FEB7149A61CDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DarkEffect-DarkEffectUITests/Pods-DarkEffect-DarkEffectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DarkEffect-DarkEffectUITests/Pods-DarkEffect-DarkEffectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DarkEffect-DarkEffectUITests/Pods-DarkEffect-DarkEffectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF19891BE5C010C6DD6D9AFE /* [CP-User] Hummer-before-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-before-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_before_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_before_hooks.sh\"\nfi\n";
+		};
+		CDCD9FA4295E3E6902AD59E6 /* [CP-User] Hummer-after-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-after-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_after_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_after_hooks.sh\"\nfi\n";
+		};
+		D28BA10277172B47049091BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DarkEffect-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3BCF736EA9C3FCC3A39D792 /* [CP-User] Hummer-before-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-before-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_before_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_before_hooks.sh\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B7476252A8F4E410029F458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B7476312A8F4E410029F458 /* ViewController.swift in Sources */,
+				2B74762D2A8F4E410029F458 /* AppDelegate.swift in Sources */,
+				2B74762F2A8F4E410029F458 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B74763B2A8F4E430029F458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B7476442A8F4E430029F458 /* DarkEffectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B7476452A8F4E430029F458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B74764E2A8F4E430029F458 /* DarkEffectUITests.swift in Sources */,
+				2B7476502A8F4E430029F458 /* DarkEffectUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B7476412A8F4E430029F458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B7476282A8F4E410029F458 /* DarkEffect */;
+			targetProxy = 2B7476402A8F4E430029F458 /* PBXContainerItemProxy */;
+		};
+		2B74764B2A8F4E430029F458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B7476282A8F4E410029F458 /* DarkEffect */;
+			targetProxy = 2B74764A2A8F4E430029F458 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B7476322A8F4E410029F458 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B7476332A8F4E410029F458 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2B7476372A8F4E430029F458 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B7476382A8F4E430029F458 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B7476512A8F4E430029F458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2B7476522A8F4E430029F458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B7476542A8F4E430029F458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A84EB8189B1668D5A06BF767 /* Pods-DarkEffect.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49DBB47YQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DarkEffect/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DarkEffect.DarkEffect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B7476552A8F4E430029F458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6539BF76670754CA8EC8FF71 /* Pods-DarkEffect.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49DBB47YQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DarkEffect/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DarkEffect.DarkEffect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2B7476572A8F4E430029F458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9358986AB822589874161D63 /* Pods-DarkEffectTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49DBB47YQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DarkEffect.DarkEffectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkEffect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DarkEffect";
+			};
+			name = Debug;
+		};
+		2B7476582A8F4E430029F458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFFC46547C12E31C6BCC7C78 /* Pods-DarkEffectTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49DBB47YQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DarkEffect.DarkEffectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkEffect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DarkEffect";
+			};
+			name = Release;
+		};
+		2B74765A2A8F4E430029F458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D583525F8B202BF6D81FDAC7 /* Pods-DarkEffect-DarkEffectUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49DBB47YQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DarkEffect.DarkEffectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DarkEffect;
+			};
+			name = Debug;
+		};
+		2B74765B2A8F4E430029F458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF6966FCAB8B4F63CB1CB35 /* Pods-DarkEffect-DarkEffectUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49DBB47YQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DarkEffect.DarkEffectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DarkEffect;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B7476242A8F4E400029F458 /* Build configuration list for PBXProject "DarkEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B7476512A8F4E430029F458 /* Debug */,
+				2B7476522A8F4E430029F458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B7476532A8F4E430029F458 /* Build configuration list for PBXNativeTarget "DarkEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B7476542A8F4E430029F458 /* Debug */,
+				2B7476552A8F4E430029F458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B7476562A8F4E430029F458 /* Build configuration list for PBXNativeTarget "DarkEffectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B7476572A8F4E430029F458 /* Debug */,
+				2B7476582A8F4E430029F458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B7476592A8F4E430029F458 /* Build configuration list for PBXNativeTarget "DarkEffectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B74765A2A8F4E430029F458 /* Debug */,
+				2B74765B2A8F4E430029F458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B7476212A8F4E400029F458 /* Project object */;
+}

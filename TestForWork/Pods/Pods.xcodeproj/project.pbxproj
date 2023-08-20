@@ -462,6 +462,7 @@
 		28E84628DD94FF62168BC3FDB798923C /* Infallible+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Infallible+Operators.swift"; path = "RxSwift/Traits/Infallible/Infallible+Operators.swift"; sourceTree = "<group>"; };
 		29CBEBA9107EB3170F05ADC180007E4B /* SerialDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerialDispatchQueueScheduler.swift; path = RxSwift/Schedulers/SerialDispatchQueueScheduler.swift; sourceTree = "<group>"; };
 		2A699B04EEC43C820867068E77D2683E /* LookinHierarchyFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LookinHierarchyFile.h; path = Src/Main/Shared/LookinHierarchyFile.h; sourceTree = "<group>"; };
+		2BB7EC4C2A835E1800946005 /* EENavigator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = EENavigator.xcodeproj; sourceTree = "<group>"; };
 		2C1BACEAD05D8AC706C592B84CBDA0E1 /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
 		2C252EA5E06F8D66109236372C1B1515 /* LKS_PerspectiveViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKS_PerspectiveViewController.h; path = Src/Main/Server/Perspective/LKS_PerspectiveViewController.h; sourceTree = "<group>"; };
 		2E1946176AE63A4B1DDF04E3F602E2B8 /* LKS_HierarchyDisplayItemsMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKS_HierarchyDisplayItemsMaker.h; path = Src/Main/Server/Others/LKS_HierarchyDisplayItemsMaker.h; sourceTree = "<group>"; };
@@ -625,7 +626,7 @@
 		9C66C7227311CA2B59FDBE49C8F6316E /* SwitchIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchIfEmpty.swift; path = RxSwift/Observables/SwitchIfEmpty.swift; sourceTree = "<group>"; };
 		9C76F7DA1433C4D2071B6A3EA7E4E95B /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
 		9D016F7A600D77BC9B4BD8460F68582D /* Producer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Producer.swift; path = RxSwift/Observables/Producer.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E0FB78EC919B1857CB8AE7CB5F7EE2D /* RetryWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryWhen.swift; path = RxSwift/Observables/RetryWhen.swift; sourceTree = "<group>"; };
 		9E3DC35E646142F48D152645A7B8440F /* LookinServer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LookinServer-Info.plist"; sourceTree = "<group>"; };
 		9F585F48EE06B436B18827C6187B41C1 /* LKS_PerspectiveHierarchyView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKS_PerspectiveHierarchyView.h; path = Src/Main/Server/Perspective/LKS_PerspectiveHierarchyView.h; sourceTree = "<group>"; };
@@ -1009,8 +1010,14 @@
 				19D156DE22FB5DE87CB215B68A78EB51 /* Zip+Collection.swift */,
 				1E531CC2B4EB1B59B00B8862D1E42E66 /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		2BB7EC4D2A835E1800946005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2E38A887247D48B5AF87C17A4F446C89 /* Support Files */ = {
@@ -1226,6 +1233,7 @@
 		53DA99C9FF694D9088ACA3CC40FA8B96 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				2BB7EC4C2A835E1800946005 /* EENavigator.xcodeproj */,
 				99CFA9518C1E6068DA4E6CF221FAF818 /* LookinServer */,
 				2556BDC85CF1A8A9F12DCDEEF638CB5D /* RxSwift */,
 				E3484D60FA31A45AF7B27B7D3A99F857 /* SnapKit */,
@@ -1263,7 +1271,6 @@
 				5263A967E2D36E37C8C5A82567ABDB89 /* Core */,
 				2E38A887247D48B5AF87C17A4F446C89 /* Support Files */,
 			);
-			name = LookinServer;
 			path = LookinServer;
 			sourceTree = "<group>";
 		};
@@ -1320,7 +1327,6 @@
 				42EE3E5432B85F616698E1771FE99753 /* UILayoutSupport+Extensions.swift */,
 				97AE6A977C9D4592B0BDD1D6E8945CC7 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1537,6 +1543,12 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 3CFA206E8D8F8CF72BFCEB9AEA2ACE09 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2BB7EC4D2A835E1800946005 /* Products */;
+					ProjectRef = 2BB7EC4C2A835E1800946005 /* EENavigator.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				638FEAAFC575BB76BC6AC055CDDA3506 /* LookinServer */,

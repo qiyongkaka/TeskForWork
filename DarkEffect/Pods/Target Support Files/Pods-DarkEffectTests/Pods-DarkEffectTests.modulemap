@@ -1,0 +1,6 @@
+framework module Pods_DarkEffectTests {
+  umbrella header "Pods-DarkEffectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

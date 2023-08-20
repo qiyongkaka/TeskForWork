@@ -3,4 +3,69 @@
    uuid = "2AECE001-751F-4A17-AED9-EB34B24C330F"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FCF6D0A-27B4-45A6-B63F-BED0352617D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestForWork/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "navigationController(_:animationControllerFor:from:to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3FCF6D0A-27B4-45A6-B63F-BED0352617D1 - 59e6687216836edb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.navigationController(_: __C.UINavigationController, animationControllerFor: __C.UINavigationControllerOperation, from: __C.UIViewController, to: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewControllerAnimatedTransitioning&gt;"
+                  moduleName = "TestForWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bytedance/Test/TeskForWork/TestForWork/TestForWork/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "3FCF6D0A-27B4-45A6-B63F-BED0352617D1 - 59e6687216836efa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.navigationController(_: __C.UINavigationController, animationControllerFor: __C.UINavigationControllerOperation, from: __C.UIViewController, to: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewControllerAnimatedTransitioning&gt;"
+                  moduleName = "TestForWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bytedance/Test/TeskForWork/TestForWork/TestForWork/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "3FCF6D0A-27B4-45A6-B63F-BED0352617D1 - 59e6687216836d5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.navigationController(_: __C.UINavigationController, animationControllerFor: __C.UINavigationControllerOperation, from: __C.UIViewController, to: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewControllerAnimatedTransitioning&gt;"
+                  moduleName = "TestForWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bytedance/Test/TeskForWork/TestForWork/TestForWork/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

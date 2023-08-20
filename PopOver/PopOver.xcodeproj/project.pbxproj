@@ -13,6 +13,7 @@
 		2BE69E442A7C9B39009E6068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE69E422A7C9B39009E6068 /* Main.storyboard */; };
 		2BE69E462A7C9B3A009E6068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE69E452A7C9B3A009E6068 /* Assets.xcassets */; };
 		2BE69E492A7C9B3A009E6068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE69E472A7C9B3A009E6068 /* LaunchScreen.storyboard */; };
+		80B8A096BFD53375A455172D /* Pods_PopOver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7694A454B69C6121121918 /* Pods_PopOver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		2BE69E452A7C9B3A009E6068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BE69E482A7C9B3A009E6068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BE69E4A2A7C9B3A009E6068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		429D612EAF5B9E445C35358F /* Pods-PopOver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopOver.debug.xcconfig"; path = "Target Support Files/Pods-PopOver/Pods-PopOver.debug.xcconfig"; sourceTree = "<group>"; };
+		474D939A39EA111EC45A9BBC /* Pods-PopOver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopOver.release.xcconfig"; path = "Target Support Files/Pods-PopOver/Pods-PopOver.release.xcconfig"; sourceTree = "<group>"; };
+		9D7694A454B69C6121121918 /* Pods_PopOver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopOver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B8A096BFD53375A455172D /* Pods_PopOver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				2BE69E3B2A7C9B39009E6068 /* PopOver */,
 				2BE69E3A2A7C9B39009E6068 /* Products */,
+				A38E7166D9281D02FE0498A3 /* Pods */,
+				64C352629773AF6C348EF0E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = PopOver;
 			sourceTree = "<group>";
 		};
+		64C352629773AF6C348EF0E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D7694A454B69C6121121918 /* Pods_PopOver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A38E7166D9281D02FE0498A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				429D612EAF5B9E445C35358F /* Pods-PopOver.debug.xcconfig */,
+				474D939A39EA111EC45A9BBC /* Pods-PopOver.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BE69E4D2A7C9B3A009E6068 /* Build configuration list for PBXNativeTarget "PopOver" */;
 			buildPhases = (
+				0D6471A68B79AC7A5AA19E4D /* [CP] Check Pods Manifest.lock */,
+				328BD4CB75323E2D8CFC306D /* [CP-User] Hummer-before-hooks */,
 				2BE69E352A7C9B39009E6068 /* Sources */,
 				2BE69E362A7C9B39009E6068 /* Frameworks */,
 				2BE69E372A7C9B39009E6068 /* Resources */,
+				02F3DFA7D2CEDAA4BF6698C8 /* [CP] Embed Pods Frameworks */,
+				078D0B4F04EEC0DE58F5BB67 /* [CP-User] Hummer-after-hooks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +161,68 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02F3DFA7D2CEDAA4BF6698C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PopOver/Pods-PopOver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PopOver/Pods-PopOver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PopOver/Pods-PopOver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		078D0B4F04EEC0DE58F5BB67 /* [CP-User] Hummer-after-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-after-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_after_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_after_hooks.sh\"\nfi\n";
+		};
+		0D6471A68B79AC7A5AA19E4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PopOver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		328BD4CB75323E2D8CFC306D /* [CP-User] Hummer-before-hooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Hummer-before-hooks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/hummer_before_hooks.sh\" ];then\n  bash \"${PODS_ROOT}/hummer_before_hooks.sh\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BE69E352A7C9B39009E6068 /* Sources */ = {
@@ -282,6 +373,7 @@
 		};
 		2BE69E4E2A7C9B3A009E6068 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 429D612EAF5B9E445C35358F /* Pods-PopOver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +387,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +403,7 @@
 		};
 		2BE69E4F2A7C9B3A009E6068 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 474D939A39EA111EC45A9BBC /* Pods-PopOver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +417,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

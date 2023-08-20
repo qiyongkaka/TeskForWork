@@ -1,0 +1,11 @@
+framework module EENavigator {
+  umbrella header "EENavigator-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module EENavigator.Swift {
+  header "EENavigator-Swift.h"
+  requires objc
+}

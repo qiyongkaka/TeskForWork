@@ -9,39 +9,36 @@ import Foundation
 
 
 protocol Subject {
-    func addObserver(observer: any Observer)
-    func removeObserver(observer: any Observer)
+    func addObserver(observer: Observer)
+    func removeObserver(observer: Observer)
     func notifyObservers()
 }
 
-protocol Observer: Equatable {
-    
+protocol Observer {
     func update(temperature: Double)
+
 }
 
 class WeatherStation: Subject {
-    
     var temperature: Double = 0
-    var observers: [any Observer] = []
-    
-    func addObserver(observer: any Observer) {
+    var observers: [Observer] = []
+
+    func addObserver(observer: Observer) {
         observers.append(observer)
     }
-    
-    func removeObserver(observer: any Observer) {
-        if let index = observers.firstIndex(where: { guard let left = $0 as? Display, let right = observer as? Display else { return false }
-            if left === right { return true } else { return false }
-        }) {
+
+    func removeObserver(observer: Observer) {
+        if let index = observers.firstIndex(where: {  ($0 as AnyObject) === (observer as AnyObject)}) {
             observers.remove(at: index)
         }
     }
-    
+
     func notifyObservers() {
         for observer in observers {
             observer.update(temperature: temperature)
         }
     }
-    
+
     func setTemperature(temperature: Double) {
         self.temperature = temperature
         notifyObservers()
@@ -49,14 +46,6 @@ class WeatherStation: Subject {
 }
 
 class Display: Observer {
-    static func == (lhs: Display, rhs: Display) -> Bool {
-        if lhs === rhs {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     func update(temperature: Double) {
         print("当前温度为：\(temperature)")
     }
@@ -71,7 +60,4 @@ func testForObserver() {
     weatherStation.addObserver(observer: display2)
 
     weatherStation.setTemperature(temperature: 25)
-    weatherStation.removeObserver(observer: display1)
-    print(weatherStation.observers.count)
 }
-

@@ -7,6 +7,7 @@ target 'TestForWork' do
   pod 'LookinServer', :configurations => ['Debug']
   pod 'SnapKit'
   pod 'RxSwift', '6.5.0'
+  pod ''
 
   # Pods for TestForWork
 

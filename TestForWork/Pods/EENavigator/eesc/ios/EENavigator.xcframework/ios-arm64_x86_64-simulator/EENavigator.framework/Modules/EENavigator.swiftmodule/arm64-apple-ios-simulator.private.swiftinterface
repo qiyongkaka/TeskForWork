@@ -1,0 +1,657 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name EENavigator
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import EEAtomic
+@_exported import EENavigator
+import EETroubleKiller
+import Foundation
+import LKCommonsLogging
+import LKCommonsTracker
+import SuiteCodable
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+@inlinable @inline(__always) internal func assertionFailure(_ message: @autoclosure () -> String = String(), file: StaticString = #fileID, line: UInt = #line) {
+    let flag = UserDefaults.standard.bool(forKey: "AssertDebugItemCloseKey")
+    if !flag {
+        NotificationCenter.default.post(name: .init("CustomAssertNotification"),
+                                        object: nil,
+                                        userInfo: [
+                                            "message": message(),
+                                            "file": file,
+                                            "line": line
+                                        ])
+    }
+    print("[ERROR][ASSERT]\(file):\(line): \(message())")
+}
+@inlinable internal func assert(_ condition: @autoclosure () -> Bool, _ message: @autoclosure () -> String = String(), file: StaticString = #fileID, line: UInt = #line) {
+    if _slowPath(!condition()) {
+        assertionFailure(message(), file: file, line: line)
+    }
+}
+@_hasMissingDesignatedInitializers final public class AsyncResult : Resource {
+  public typealias ObserverBlock = (AsyncResult) -> Void
+  final public var identifier: String? {
+    get
+    set
+  }
+  final public var resource: Resource? {
+    get
+  }
+  final public var error: Error? {
+    get
+  }
+  final public func add(observer: @escaping ObserverBlock)
+  @objc deinit
+}
+public typealias MatchBlock = (URL) -> Bool
+public protocol URLConvertible {
+  var _url: URL { get }
+}
+public enum PatternType {
+  case plain, path, regex
+  public static func == (a: EENavigator.PatternType, b: EENavigator.PatternType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PatternConfig {
+  public let pattern: String
+  public let type: PatternType
+  public init(pattern: String, type: PatternType = .plain)
+}
+public protocol Body : EENavigator.URLConvertible {
+  static var patternConfig: PatternConfig { get }
+  var forcePush: Bool? { get }
+  static func getBody(req: Request) -> Self?
+}
+extension Body {
+  public var forcePush: Bool? {
+    get
+  }
+  public static func getBody(req: Request) -> Self?
+  public static func getBody(req: Request) -> Self? where Self : Swift.Decodable, Self : Swift.Encodable
+}
+public typealias CodableBody = Body & Codable
+public protocol PlainBody : EENavigator.Body {
+  static var pattern: String { get }
+}
+public typealias CodablePlainBody = PlainBody & Codable
+extension PlainBody {
+  public static var patternConfig: PatternConfig {
+    get
+  }
+  public var _url: URL {
+    get
+  }
+}
+extension Request {
+  final public func getBody<T>() throws -> T where T : EENavigator.Body
+  final public func invalidBodyError() -> Error
+}
+public struct ContextKeys {
+  public static let matchedGroups: Swift.String
+  public static let matchedParameters: Swift.String
+  public static let matched: Swift.String
+  public static let matchedPattern: Swift.String
+  public static let body: Swift.String
+  public static let naviParams: Swift.String
+  public static let openType: Swift.String
+  public static let from: Swift.String
+}
+extension Dictionary where Key == Swift.String, Value == Any {
+  public init<T>(body: T) where T : EENavigator.Body
+  public init(naviParams: NaviParams)
+  public func merging(naviParams: NaviParams) -> Dictionary
+  public func merging<T>(body: T) -> Dictionary where T : EENavigator.Body
+  public var naviParams: NaviParams? {
+    get
+  }
+  public func body<T>() -> T? where T : EENavigator.Body
+  public func from() -> NavigatorFrom?
+  public func openType() -> OpenType?
+}
+extension Navigatable {
+  public func pop(from: NavigatorFrom, animated: Bool = true, completion: Completion? = nil)
+  public func push(_ viewController: UIViewController, from: NavigatorFrom, animated: Bool = true, completion: Completion? = nil)
+  public func present(_ viewController: UIViewController, wrap: UINavigationController.Type? = nil, from: NavigatorFrom, prepare: ((UIViewController) -> Void)? = nil, animated: Bool = true, completion: Completion? = nil)
+  public func showDetail(_ viewController: UIViewController, wrap: UINavigationController.Type? = nil, from: NavigatorFrom, completion: Completion? = nil)
+}
+extension Navigatable {
+  public func present(_ url: URL, context: [String : Any] = [:], wrap: UINavigationController.Type? = nil, from: NavigatorFrom, prepare: ((UIViewController) -> Void)? = nil, animated: Bool = true, completion: Handler? = nil)
+  public func present<T>(body: T, naviParams: NaviParams? = nil, context: [String : Any] = [:], wrap: UINavigationController.Type? = nil, from: NavigatorFrom, prepare: ((UIViewController) -> Void)? = nil, animated: Bool = true, completion: Handler? = nil) where T : EENavigator.Body
+  public func push(_ url: URL, context: [String : Any] = [:], from: NavigatorFrom, forcePush: Bool? = nil, animated: Bool = true, completion: Handler? = nil)
+  public func push<T>(body: T, naviParams: NaviParams? = nil, context: [String : Any] = [:], from: NavigatorFrom, animated: Bool = true, completion: Handler? = nil) where T : EENavigator.Body
+  public func open(_ url: URL, context: [String : Any] = [:], from: NavigatorFrom, useDefaultOpenType: Bool = true, completion: Handler? = nil)
+  public func open<T>(body: T, naviParams: NaviParams? = nil, context: [String : Any] = [:], from: NavigatorFrom, useDefaultOpenType: Bool = true, completion: Handler? = nil) where T : EENavigator.Body
+  public func showDetail(_ url: URL, context: [String : Any] = [:], wrap: UINavigationController.Type? = nil, from: NavigatorFrom, completion: Handler? = nil)
+  public func showDetail<T>(body: T, naviParams: NaviParams? = nil, context: [String : Any] = [:], wrap: UINavigationController.Type? = nil, from: NavigatorFrom, completion: Handler? = nil) where T : EENavigator.Body
+}
+extension Navigatable {
+  @available(iOS 13.0, *)
+  public var mainScene: UIWindowScene? {
+    get
+  }
+  public var mainSceneWindow: UIWindow? {
+    get
+  }
+  public var mainSceneWindows: [UIWindow] {
+    get
+  }
+  public var mainSceneTopMost: UIViewController? {
+    get
+  }
+  public var navigation: UINavigationController? {
+    get
+  }
+}
+public protocol TabProvider : AnyObject {
+  var tabbarController: UITabBarController? { get }
+  func switchTab(to tabIdentifier: String)
+}
+extension UIViewController {
+  @_Concurrency.MainActor(unsafe) public var nearestNavigation: UINavigationController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func popSelf(animated: Bool = true, dismissPresented: Bool = true, completion: (() -> Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public class func topMost(of viewController: UIViewController?, checkSupport: Bool) -> UIViewController?
+}
+extension UIViewController : Resource {
+  @_Concurrency.MainActor(unsafe) public var identifier: String? {
+    get
+    set(newValue)
+  }
+}
+extension UIViewController {
+  @_Concurrency.MainActor(unsafe) weak public var presenter: UIViewController? {
+    get
+    set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) weak public var presentee: UIViewController? {
+    get
+    set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) public var supportNavigator: Bool {
+    get
+    set(newValue)
+  }
+}
+extension URL {
+  public var withoutQueryAndFragment: String {
+    get
+  }
+  public var queryParameters: [String : String] {
+    get
+  }
+  public func append(name: String, value: String, forceNew: Bool = true) -> URL
+  public func remove(name: String) -> URL
+  public func append(parameters: [String : String], forceNew: Bool = true) -> URL
+  public func remove(names: [String]) -> URL
+  public func append(fragment: String?, forceNew: Bool = true) -> URL
+  public func removeFragment() -> URL
+}
+public protocol RouterHandler {
+  func handle(req: Request, res: Response)
+}
+public typealias MiddlewareHandler = RouterHandler
+public typealias LocateOrPopObserverHandler = RouterHandler
+open class TypedRouterHandler<T> where T : EENavigator.Body {
+  public typealias BodyType = T
+  public init()
+  open func handle(_ body: T, req: Request, res: Response)
+  @objc deinit
+}
+extension Router {
+  public func registerRoute_<T>(type: T.Type, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping (T, Request, Response) -> Void) -> Router where T : EENavigator.Body
+  public func registerRoute<T>(type: T.Type, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping (T, Request, Response) -> Void) where T : EENavigator.Body
+  public func registerRoute_<T>(type: T.Type, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> TypedRouterHandler<T>) -> Router where T : EENavigator.Body
+  public func registerRoute<T>(type: T.Type, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> TypedRouterHandler<T>) where T : EENavigator.Body
+  public func registerRoute_<T>(plainPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) -> Router where T : EENavigator.RouterHandler
+  public func registerRoute<T>(plainPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) where T : EENavigator.RouterHandler
+  public func registerRoute<T>(pattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) where T : EENavigator.RouterHandler
+  public func registerRoute_<T>(regExpPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) -> Router where T : EENavigator.RouterHandler
+  public func registerRoute<T>(regExpPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) where T : EENavigator.RouterHandler
+  public func registerRoute_<T>(match: @escaping MatchBlock, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) -> Router where T : EENavigator.RouterHandler
+  public func registerRoute<T>(match: @escaping MatchBlock, priority: Priority = .default, tester: @escaping Tester = defaultTester, cacheHandler: Bool = false, factory: @escaping () -> T) where T : EENavigator.RouterHandler
+  public func registerMiddleware_(pattern: String = "", postRoute: Bool = false, cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler) -> Router
+  public func registerMiddleware(pattern: String = "", postRoute: Bool = false, cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler)
+  public func registerMiddleware_(regExpPattern: String, postRoute: Bool = false, cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler) -> Router
+  public func registerMiddleware(regExpPattern: String, postRoute: Bool = false, cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler)
+  public func registerObserver_(pattern: String = "", cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler) -> Router
+  public func registerObserver(pattern: String = "", cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler)
+  public func registerObserver_(regExpPattern: String, cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler) -> Router
+  public func registerObserver(regExpPattern: String, cacheHandler: Bool = false, factory: @escaping () -> MiddlewareHandler)
+  public func registerLocateOrPopObserver_(pattern: String = "", cacheHandler: Bool = false, factory: @escaping () -> LocateOrPopObserverHandler) -> Router
+  public func registerLocateOrPopObserver(pattern: String = "", cacheHandler: Bool = false, factory: @escaping () -> LocateOrPopObserverHandler)
+}
+extension Routable {
+  public func response<T>(for body: T, test: Bool = false) -> Response where T : EENavigator.Body
+  public func response(for url: URL, context: [String : Any] = [:]) -> Response
+}
+public protocol NavigatorFrom : AnyObject {
+  var fromViewController: UIViewController? { get }
+  var canBeStrongReferences: Bool { get }
+}
+extension NavigatorFrom {
+  public var canBeStrongReferences: Bool {
+    get
+  }
+}
+final public class NavigatorFromWrapper : NavigatorFrom {
+  weak final public var from: NavigatorFrom?
+  public init(_ from: NavigatorFrom)
+  final public var fromViewController: UIViewController? {
+    get
+  }
+  @objc deinit
+}
+extension UIViewController : NavigatorFrom {
+  @_Concurrency.MainActor(unsafe) public var fromViewController: UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var canBeStrongReferences: Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func currentWindow() -> UIWindow?
+}
+extension UIWindow : NavigatorFrom {
+  @_Concurrency.MainActor(unsafe) public var fromViewController: UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var canBeStrongReferences: Bool {
+    get
+  }
+}
+@available(iOS 13.0, *)
+extension UIWindowScene : NavigatorFrom {
+  @_Concurrency.MainActor(unsafe) public var fromViewController: UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var canBeStrongReferences: Bool {
+    get
+  }
+}
+final public class WindowTopMostFrom : NavigatorFrom {
+  public init(window: UIWindow)
+  public init(vc: UIViewController)
+  final public var fromViewController: UIViewController? {
+    get
+  }
+  @objc deinit
+}
+public typealias Handler = (Request, Response) -> Void
+public typealias Tester = (Request) -> Bool
+public typealias OpenTypeHandler = (_ url: URL, _ context: [String : Any]) -> OpenType?
+public let defaultTester: Tester
+public protocol LKSplitVCDelegate : AnyObject {
+  var lkTopMost: UIViewController? { get }
+  var lkTabIdentifier: String? { get }
+}
+public typealias QueryHandler = ((NaviParams, [String : Any], Navigator), @escaping Completion) -> Void
+public typealias NavigatorTimeTracker = (String, String, NavigatorType, Int64) -> Void
+@objc public enum NavigatorType : Int {
+  case unknow, present, push, showDetail, didAppear
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class Navigator : Router, Navigatable {
+  @objc public static var shared: EENavigator.Navigator {
+    get
+  }
+  public var navigation: UINavigationController? {
+    get
+  }
+  public var navigationProvider: (() -> UINavigationController)?
+  public var tabProvider: (() -> TabProvider)?
+  public var featureGatingProvider: ((_ key: String) -> Bool)?
+  @discardableResult
+  public static func resetSharedNavigator() -> Navigator
+  public func registerOpenType(pattern: String, _ handler: @escaping OpenTypeHandler)
+  public func registerOpenType(plainPattern: String, _ handler: @escaping OpenTypeHandler)
+  public func registerOpenType(regExpPattern: String, _ handler: @escaping OpenTypeHandler)
+  @objc public func didAppearTimeTracker(toVC: UIViewController)
+  public func updateNavigatorTimeTracker(_ navigatorTimeTracker: @escaping NavigatorTimeTracker)
+  public func updateNavigatorStartTime()
+  public func push(_ url: URL, context: [String : Any] = [:], from: NavigatorFrom, animated: Bool = true, completion: Handler? = nil)
+  public func open(_ req: NavigatorOpenRequest)
+  public func open(_ req: NavigatorOpenControllerRequest)
+  public func globalValid() -> Bool
+  @_disfavoredOverload public func switchTab(_ url: URL, from: NavigatorFrom, animated: Bool = false, completion: Completion? = nil)
+  public func switchTab(_ url: URL, from: NavigatorFrom, animated: Bool = false, completion: ((Bool) -> Void)? = nil)
+  @objc deinit
+}
+extension Navigatable {
+  public func getResource<T>(body: T, context: [String : Any] = [:], completion: ((Resource?) -> Void)?) where T : EENavigator.Body
+  public func getResource(_ url: URL, context: [String : Any] = [:], completion: ((Resource?) -> Void)?)
+}
+public struct NavigatorOpenRequest {
+  public enum RequestOpenType {
+    case push(forcePush: Bool?)
+    case present(wrap: UINavigationController.Type?, prepare: ((UIViewController) -> Void)?)
+    case showDetail(wrap: UINavigationController.Type?)
+    public var rawValue: OpenType {
+      get
+    }
+  }
+  public var url: URL
+  public var context: [String : Any]
+  public var from: NavigatorFrom
+  public var openType: RequestOpenType?
+  public var animated: Bool?
+  public var completion: Handler?
+  public init(url: URL, context: [String : Any] = [:], from: NavigatorFrom, openType: RequestOpenType? = nil, animated: Bool? = nil, completion: Handler? = nil)
+}
+public struct NavigatorOpenControllerRequest {
+  public var controller: UIViewController
+  public var from: NavigatorFrom
+  public var openType: Navigatable.RequestOpenType?
+  public var animated: Bool
+  public var completion: Completion?
+  public init(controller: UIViewController, from: NavigatorFrom, openType: Navigatable.RequestOpenType? = nil, animated: Bool = true, completion: Completion? = nil)
+}
+public protocol Navigatable : EENavigator.Routable {
+  typealias RequestOpenType = NavigatorOpenRequest.RequestOpenType
+  func open(_ params: NavigatorOpenRequest)
+  func open(_ params: NavigatorOpenControllerRequest)
+  func globalValid() -> Bool
+  func switchTab(_ url: URL, from: NavigatorFrom, animated: Bool, completion: ((Bool) -> Void)?)
+}
+public typealias Completion = () -> Void
+public enum OpenType : String, Codable, HasDefault {
+  public static func `default`() -> OpenType
+  case push, present, showDetail, none
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct NaviParams : Codable {
+  public var openType: OpenType
+  public var popTo: URL?
+  public var switchTab: URL?
+  public var forcePush: Bool
+  public var animated: Bool
+  public init()
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol FragmentLocate : UIKit.UIViewController {
+  func customLocate(by fragment: String, with context: [String : Any], animated: Bool)
+}
+public protocol NavigatorNotification : UIKit.UIViewController {
+  func willDismiss(animated: Bool)
+}
+extension NavigatorNotification {
+  public func willDismiss(animated: Bool)
+}
+final public class Request {
+  final public var url: URL {
+    get
+  }
+  final public var context: [String : Any]
+  final public var parameters: [String : Any] {
+    get
+  }
+  final public var body: Body? {
+    get
+  }
+  final public var from: NavigatorFrom {
+    get
+  }
+  public init(url: URL, context: [String : Any])
+  @objc deinit
+}
+public protocol Resource {
+  var identifier: String? { get set }
+}
+public struct EmptyResource : Resource {
+  public var identifier: String?
+  public init()
+}
+public typealias RedirectHandler = (URL, [String : Any]) -> Void
+final public class Response {
+  public enum Status {
+    case handling, pending, ended
+    public static func == (a: EENavigator.Response.Status, b: EENavigator.Response.Status) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  final public var resource: Resource? {
+    get
+  }
+  final public var error: RouterError? {
+    get
+  }
+  final public let request: Request
+  final public var status: Status {
+    get
+  }
+  final public var parameters: [String : Any] {
+    get
+  }
+  public init(request: Request)
+  final public func redirect<T>(body: T, naviParams: NaviParams? = nil, context: [String : Any] = [:]) where T : EENavigator.Body
+  final public func redirect(_ url: URL, context: [String : Any] = [:])
+  final public func append(error: Error)
+  final public func end(error: Error?, file: String = #fileID, function: String = #function, line: Int = #line)
+  final public func end(resource: Resource?, file: String = #fileID, function: String = #function, line: Int = #line)
+  final public func wait()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class Router : NSObject, Routable {
+  public static let logger: any LKCommonsLogging.Log
+  public enum Priority : Int, Comparable {
+    public static func < (lhs: Router.Priority, rhs: Router.Priority) -> Bool
+    case low, `default`, high
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public var defaultSchemesBlock: () -> [String]
+  @objc override dynamic public init()
+  open func registerRoute_(plainPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler) -> Router
+  open func registerRoute(plainPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler)
+  open func registerRoute_(pattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler) -> Router
+  open func registerRoute(pattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler)
+  open func registerRoute_(regExpPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler) -> Router
+  open func registerRoute(regExpPattern: String, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler)
+  open func registerRoute_(match: @escaping MatchBlock, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler) -> Router
+  open func registerRoute(match: @escaping MatchBlock, priority: Priority = .default, tester: @escaping Tester = defaultTester, _ routeHandler: @escaping Handler)
+  open func registerObserver_(pattern: String = "", _ middlewareHandler: @escaping Handler) -> Router
+  open func registerObserver(pattern: String = "", _ middlewareHandler: @escaping Handler)
+  open func registerObserver_(regExpPattern: String, _ middlewareHandler: @escaping Handler) -> Router
+  open func registerObserver(regExpPattern: String, _ middlewareHandler: @escaping Handler)
+  open func registerMiddleware_(pattern: String = "", postRoute: Bool = false, _ middlewareHandler: @escaping Handler) -> Router
+  open func registerMiddleware(pattern: String = "", postRoute: Bool = false, _ middlewareHandler: @escaping Handler)
+  open func registerMiddleware_(regExpPattern: String, postRoute: Bool = false, _ middlewareHandler: @escaping Handler) -> Router
+  open func registerMiddleware(regExpPattern: String, postRoute: Bool = false, _ middlewareHandler: @escaping Handler)
+  open func registerLocateOrPopObserver_(pattern: String = "", _ locateOrPopObserverHandler: @escaping Handler) -> Router
+  open func registerLocateOrPopObserver(pattern: String = "", _ locateOrPopObserverHandler: @escaping Handler)
+  open func deregisterRoute(_ pattern: String)
+  open func deregisterMiddleware(_ pattern: String)
+  open func deregisterLocateOrPopObserver(_ pattern: String)
+  open func notifyLocateOrPopObservers(for url: URL, context: [String : Any] = [:])
+  open func response(for url: URL, context: [String : Any] = [:], test: Bool = false) -> Response
+  open func contains(_ url: URL, context: [String : Any] = [:]) -> Bool
+  public func clearHandlerCache()
+  @objc deinit
+}
+public protocol Routable {
+  func response(for url: URL, context: [String : Any], test: Bool) -> Response
+  func contains(_ url: URL, context: [String : Any]) -> Bool
+}
+extension Router {
+  public var registerRoute: RouterRegisterBuilder0 {
+    get
+  }
+  public var registerMiddleware: RouteMiddlewareBuilder {
+    get
+  }
+  public var registerObserver: RouteObserverBuilder {
+    get
+  }
+  public var registerLocateOrPopObserver: RouteLocateOrPopObserverBuilder {
+    get
+  }
+}
+public struct RouterRegisterBuilder0 {
+  public var router: Router
+  public func plain(_ pattern: String) -> RouterRegisterBuilder
+  public func path(_ path: String) -> RouterRegisterBuilder
+  public func regex(_ pattern: String) -> RouterRegisterBuilder
+  public func match(_ match: @escaping MatchBlock) -> RouterRegisterBuilder
+  public func type<T>(_ type: T.Type) -> RouterRegisterBuilderBody<T> where T : EENavigator.Body
+}
+public enum RouterMatchPattern {
+  case plain(String)
+  case path(String)
+  case regex(String)
+  case match(MatchBlock)
+}
+public protocol RouterRegisterBuilderType {
+  var base: RouterRegisterBuilderBase { get set }
+}
+public struct RouterRegisterBuilderBase {
+  public let router: Router
+  public let pattern: RouterMatchPattern
+  public var priority: Router.Priority
+  public var tester: Tester
+}
+extension RouterRegisterBuilderType {
+  public func tester(_ tester: @escaping Tester) -> Self
+  public func priority(_ priority: Router.Priority) -> Self
+  @discardableResult
+  public func handle(_ handler: @escaping Handler) -> Router
+}
+public struct RouterRegisterBuilder : RouterRegisterBuilderType {
+  public var base: RouterRegisterBuilderBase
+}
+public struct RouterRegisterBuilderBody<T> : RouterRegisterBuilderType {
+  public var base: RouterRegisterBuilderBase
+  @discardableResult
+  public func handle(_ handler: @escaping (T, Request, Response) -> Void) -> Router where T : EENavigator.Body
+}
+public struct RouteMiddlewareBuilderBase {
+}
+public protocol RouteMiddlewareBuilderType {
+  var base: RouteMiddlewareBuilderBase { get set }
+  @discardableResult
+  func handle(_ handler: @escaping Handler) -> Router
+}
+extension RouteMiddlewareBuilderType {
+  public var router: Router {
+    get
+  }
+  public func path(_ pattern: String) -> Self
+  public func regex(_ regex: String) -> Self
+  @discardableResult
+  public func factory<T>(cache: Bool = false, _ factory: @escaping () -> T) -> Router where T : EENavigator.RouterHandler
+}
+public struct RouteMiddlewareBuilder : RouteMiddlewareBuilderType {
+  public var base: RouteMiddlewareBuilderBase
+  public func postRoute(_ postRoute: Bool) -> EENavigator.RouteMiddlewareBuilder
+  public func handle(_ handler: @escaping Handler) -> Router
+}
+public struct RouteObserverBuilder : RouteMiddlewareBuilderType {
+  public var base: RouteMiddlewareBuilderBase
+  public func handle(_ handler: @escaping Handler) -> Router
+}
+public struct RouteLocateOrPopObserverBuilder : RouteMiddlewareBuilderType {
+  public var base: RouteMiddlewareBuilderBase
+  public func handle(_ handler: @escaping Handler) -> Router
+}
+final public class RouterError : Error {
+  final public let message: String
+  final public let code: Int
+  final public var openType: OpenType {
+    get
+  }
+  final public var url: String? {
+    get
+  }
+  final public var fromViewController: String? {
+    get
+  }
+  final public var stack: [Error] {
+    get
+  }
+  final public var current: Error {
+    get
+  }
+  public init(code: Int, message: String = "")
+  final public func append(_ error: Error)
+  @objc deinit
+}
+extension RouterError : CustomStringConvertible {
+  final public var description: String {
+    get
+  }
+}
+extension RouterError : CustomDebugStringConvertible {
+  final public var debugDescription: String {
+    get
+  }
+}
+extension RouterError {
+  public static var empty: RouterError {
+    get
+  }
+  public static var notHandled: RouterError {
+    get
+  }
+  public static var tooManyRedirects: RouterError {
+    get
+  }
+  public static func invalidParameters(_ key: String) -> RouterError
+}
+extension RouterError {
+  final public func patchExtraInfo(with url: String? = nil, from: NavigatorFrom? = nil, naviParams: NaviParams? = nil) -> RouterError
+}
+extension RouterError {
+  public static var resourceWithWrongFormat: RouterError {
+    get
+  }
+  public static var cannotPush: RouterError {
+    get
+  }
+  public static var cannotPresent: RouterError {
+    get
+  }
+  public static var cannotShowDetail: RouterError {
+    get
+  }
+}
+public func swizzling(forClass: AnyClass, originalSelector: Selector, swizzledSelector: Selector)
+@_hasMissingDesignatedInitializers final public class URLInterceptorManager {
+  public static let shared: EENavigator.URLInterceptorManager
+  final public func register(middleware: @escaping (URL, NavigatorFrom) -> Bool)
+  final public func register(_ pattern: String, handler: @escaping (URL, NavigatorFrom) -> Void)
+  final public func handle(_ url: URL, from: NavigatorFrom)
+  final public func handle(_ url: URL, from: NavigatorFrom, options: [UIApplication.OpenURLOptionsKey : Any])
+  @available(iOS 13.0, *)
+  final public func handle(_ url: URL, from: NavigatorFrom, options: UIScene.OpenURLOptions)
+  @objc deinit
+}
+extension EENavigator.PatternType : Swift.Equatable {}
+extension EENavigator.PatternType : Swift.Hashable {}
+extension EENavigator.NavigatorType : Swift.Equatable {}
+extension EENavigator.NavigatorType : Swift.Hashable {}
+extension EENavigator.NavigatorType : Swift.RawRepresentable {}
+extension EENavigator.OpenType : Swift.Equatable {}
+extension EENavigator.OpenType : Swift.Hashable {}
+extension EENavigator.OpenType : Swift.RawRepresentable {}
+extension EENavigator.Response.Status : Swift.Equatable {}
+extension EENavigator.Response.Status : Swift.Hashable {}
+extension EENavigator.Router.Priority : Swift.Hashable {}
+extension EENavigator.Router.Priority : Swift.RawRepresentable {}
